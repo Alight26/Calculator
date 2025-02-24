@@ -1,6 +1,48 @@
+//numArray
+
+
+let numArr = [];
+
+
+
+
+
+
+//DOM Stuff
+const numbers = document.querySelectorAll('#buttonNumbers button');
+numbers.forEach((button) => {
+    button.addEventListener("click", () => {
+        numArr.push(button.textContent);
+        console.log(numArr);
+
+        const wholenumber = numArr.join('');
+        console.log(wholenumber);
+
+
+    }); 
+
+});
+
+
+
+
+/*const numberZero = querySelector("zero");
+const numberOne = querySelector("one");
+const numberTwo = querySelector("two");
+const numberThree = querySelector("three");
+const numberFour = querySelector("four");
+const numberFive = querySelector("five");
+const numberSix = querySelector("six");
+const numberSeven = querySelector("seven");
+const numberEight = querySelector("eight");
+const numberNine = querySelector("nine"); */
+
+
+
+
 // calls the math operator functions to perform the specific operation
-function operate() {
-    let operator = prompt("boop ");
+/* function operate() {
+let operator = prompt("boop ");
 
     if(operator == "+") {
         return addition();
@@ -54,5 +96,4 @@ function divide() {
 
 
 
-
-
+*/
