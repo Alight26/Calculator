@@ -1,41 +1,30 @@
 //numArray
-
-
 let numArr = [];
-
-
-
-
-
-
-//DOM Stuff
+//number button logic
 const numbers = document.querySelectorAll('#buttonNumbers button');
 numbers.forEach((button) => {
     button.addEventListener("click", () => {
         numArr.push(button.textContent);
         console.log(numArr);
 
-        const wholenumber = numArr.join('');
+        const wholenumber = numArr.join(['']);
         console.log(wholenumber);
-
-
     }); 
-
 });
 
 
+const operators = document.querySelectorAll('#buttonOperators button');
+operators.forEach((button) => {
+    button.addEventListener("click", () => {
+        numArr.push(button.textContent);
+        console.log(numArr);
+
+    })
+})
 
 
-/*const numberZero = querySelector("zero");
-const numberOne = querySelector("one");
-const numberTwo = querySelector("two");
-const numberThree = querySelector("three");
-const numberFour = querySelector("four");
-const numberFive = querySelector("five");
-const numberSix = querySelector("six");
-const numberSeven = querySelector("seven");
-const numberEight = querySelector("eight");
-const numberNine = querySelector("nine"); */
+
+
 
 
 
