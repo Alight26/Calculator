@@ -1,27 +1,81 @@
 //numArray
-let numArr = [];
+let firstNumArr = [];
 //number button logic
-const numbers = document.querySelectorAll('#buttonNumbers button');
-numbers.forEach((button) => {
-    button.addEventListener("click", () => {
-        numArr.push(button.textContent);
-        console.log(numArr);
+function start(){
+    const numbers = document.querySelectorAll('#buttonNumbers button');
+    const operatorBtn = document.querySelectorAll('.op'); 
+    numbers.forEach((button) => {
+        button.addEventListener("click", () => {
+            firstNumArr.push(button.textContent);
+            console.log(firstNumArr);
 
-        const wholenumber = numArr.join(['']);
-        console.log(wholenumber);
-    }); 
-});
-
-
-const operators = document.querySelectorAll('#buttonOperators button');
-operators.forEach((button) => {
-    button.addEventListener("click", () => {
-        numArr.push(button.textContent);
-        console.log(numArr);
-
+            const wholeNumber = firstNumArr.join('');
+            console.log(wholeNumber);
+            return parseInt(wholeNumber);
+        }); 
+    });
+    operatorBtn.forEach((button)=> {
+        button.addEventListener("click", (event) => {
+            const operatorClass = event.target.class;
+            
+            if (operatorClass === 'op') {
+                operatorFunction();
+                
+            }
+        })
     })
-})
 
+    
+
+};
+
+start();
+
+
+function operatorFunction(){
+    const operatorBtn = document.querySelectorAll('.op'); 
+    operatorBtn.forEach((button) => {
+        button.addEventListener("click", (event) => {     // operator buttons 
+            const operatorId = event.target.id;
+
+            if (operatorId === 'divide') {
+                divide(start());
+            } else if (operatorId === 'multiply') {
+                multiply(start());
+            } else if (operatorId === 'add') {
+                addition(start());
+            } else if (operatorId === 'subtract') {
+                subtract(start());
+            } else if (operatorId === 'equal') {
+                equal(start());
+            }
+            
+        })
+    });
+    
+};
+ 
+
+
+
+
+
+
+
+
+/* 
+enter first set of numbers in the calculator
+if an operator button is selected call that operator function with the numbers as an argument/parameter
+in that operator function user enters another number 
+if another operator function is selected the numbers will perform the first operator and call the next operator function
+if the operator is = it will execute and print the final number.
+
+
+
+if operator put numbers argument into parameter.
+ in the function make person put in more numbers.
+ if another operator is selected it will do the operation and move on to the other operator functions
+ if the operator selected is equals end the execution and display the answer.
 
 
 
